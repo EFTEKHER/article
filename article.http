@@ -1,0 +1,22 @@
+@article_HostAddress = https://localhost:7156
+
+### Register
+POST {{article_HostAddress}}/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "efte",
+  "email": "efte@gmail.com",
+  "password": "Password123!"
+}
+
+###
+
+### Login
+POST {{article_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "efte",
+  "password": "Password123!"
+}
