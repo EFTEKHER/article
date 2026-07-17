@@ -1,0 +1,47 @@
+## WORKSPACE EXECUTIVE SUMMARY (YAML)
+# Generated: 2026-07-16T13:17:36.7602551+06:00
+# Root: E:\.net\article
+Architecture:
+  Type: Backend (C#/.NET)
+  Scale: 18 relevant source files
+  Components: 0
+  Controllers: 0
+  Models: 8
+  Services: 0
+---
+- File: article.csproj
+  Preview: "<Project Sdk='Microsoft.NET.Sdk.Web'>  <PropertyGroup>   <TargetFramework>net10.0</TargetFramework>   <Nullable>enable</Nullable>   <ImplicitUsings>en..."
+- File: appsettings.Development.json
+  Preview: "{  'Logging': {   'LogLevel': {    'Default': 'Information',    'Microsoft.AspNetCore': 'Warning'   }  } } "
+- File: appsettings.json
+  Preview: "{  'ConnectionStrings': {   'DefaultConnection': 'Server=DESKTOP-6I7NPOK\\SQLEXPRESS;Database=ArticleAppDb;Trusted_Connection=True;TrustServerCertific..."
+- File: article.slnx
+  Preview: "<Solution>  <Project Path='article.csproj' /> </Solution> "
+- File: Program.cs
+  Preview: "var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring..."
+- File: Dtos\ArticleCreateDto.cs
+  Preview: "using System.ComponentModel.DataAnnotations; namespace article.Dtos {   public class ArticleCreateDto   {     [Required,MaxLength(200)]     public str..."
+- File: Dtos\ArticleReadDto.cs
+  Preview: "namespace article.Dtos {   public class ArticleReadDto   {     public int Id { get; set; }     public string Title { get; set; }=string.Empty;      pu..."
+- File: Dtos\LoginDto.cs
+  Preview: "using System.ComponentModel.DataAnnotations; namespace article.Dtos {   public class LoginDto   {     [Required(ErrorMessage = 'Username is required')..."
+- File: Dtos\RegisterDto.cs
+  Preview: "using System.ComponentModel.DataAnnotations; namespace article.Dtos {   public class RegisterDto   {     [Required(ErrorMessage ='Username is required..."
+- File: Dtos\UserDto.cs
+  Preview: "namespace article.Dtos {   public class UserDto   {   } } "
+- File: Models\Article.cs
+  Preview: "namespace article.Models {   public class Article   {     public int Id { get; set; }     public string Title { get; set; } = string.Empty;     public..."
+- File: Models\RefreshToken.cs
+  Preview: "namespace article.Models {   public class RefreshToken   {     public int Id { get; set; }     public int UserId { get; set; }     public string Token..."
+- File: Models\User.cs
+  Preview: "namespace article.Models {   public class User   {     public int Id { get; set; }     public string Username { get; set; } = string.Empty;     public..."
+- File: Properties\launchSettings.json
+  Preview: "{  '$schema': 'https://json.schemastore.org/launchsettings.json',  'profiles': {   'http': {    'commandName': 'Project',    'dotnetRunMessages': true..."
+- File: Repositories\UserRepository.cs
+  Preview: "using article.Models; using article.Repositories.Interfaces; using Microsoft.Data.SqlClient; namespace article.Repositories {   public class UserRepos..."
+- File: Repositories\Interfaces\IArticleRepository.cs
+  Preview: "using article.Models; namespace article.Repositories.Interfaces {   public interface IArticleRepository   {     Task<int> CreateAsync(Article article)..."
+- File: Repositories\Interfaces\IRefreshTokenRepository.cs
+  Preview: "using article.Models; namespace article.Repositories.Interfaces {   public interface IRefreshTokenRepository   {     Task SaveAsync(int userId, string..."
+- File: Repositories\Interfaces\IUserRepository.cs
+  Preview: "using article.Models; namespace article.Repositories.Interfaces {   public interface IUserRepository   {     Task<int> RegisteredAsync(User user);    ..."
