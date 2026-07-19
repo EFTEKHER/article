@@ -4,7 +4,7 @@ namespace article.Repositories.Interfaces
 {
     public interface IUserRepository
     {
-        Task<int> RegisteredAsync(User user);
+        Task<int> RegisterAsync(User user);
 
         Task<User?> GetByUsernameAsync(string username);
 
